@@ -1,7 +1,7 @@
 Simple CQRS Commands for [Nette Framework](http://nette.org)
 ===
 
-###<cite>&ldquor;Connect Commands with services in Nette.&rdquor;</cite>
+###*Connect Commands with services in Nette.*
 
 This extension provide a simle implementation of CQRS commands.
 
