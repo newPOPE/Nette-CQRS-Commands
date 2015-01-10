@@ -1,0 +1,21 @@
+{
+  "name": "adam-stipak/nette-cqrs-commands",
+  "type": "library",
+  "description": "Simple CQRS Commands for Nette Framework",
+  "keywords": ["nette", "cqrs", "commands"],
+  "license": "MIT",
+  "homepage": "https://github.com/newPOPE/Nette-RestRoute",
+  "authors": [
+    {
+      "name": "Adam Štipák",
+      "homepage": "http://newpope.org"
+    }
+  ],
+  "autoload": {
+    "classmap": ["src/RestRoute.php"]
+  },
+  "require": {
+    "nette/nette": "2.2.*",
+    "simple-bus/command-bus": "~1.0"
+  }
+}
