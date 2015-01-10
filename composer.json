@@ -19,5 +19,8 @@
   "require": {
     "nette/nette": "2.2.*",
     "simple-bus/command-bus": "~1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.4.*"
   }
 }

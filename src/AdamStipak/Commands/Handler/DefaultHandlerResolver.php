@@ -22,12 +22,10 @@ class DefaultHandlerResolver extends Object implements IResolver {
   }
 
   /**
-   * @param string $serviceId
+   * @param $service
    * @return CommandHandler
    */
-  public function resolve($serviceId) {
-    $handler = $this->container->getByType(get_class($serviceId));
-
-    return $handler;
+  public function resolve($service) {
+    return $service;
   }
 }
