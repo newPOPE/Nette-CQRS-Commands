@@ -12,7 +12,9 @@
     }
   ],
   "autoload": {
-    "classmap": ["src/RestRoute.php"]
+    "psr-0": {
+      "AdamStipak\\Commands\\": "src/"
+    }
   },
   "require": {
     "nette/nette": "2.2.*",
