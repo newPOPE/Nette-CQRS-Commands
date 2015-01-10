@@ -1,12 +1,12 @@
 <?php
 
-namespace AdamStipak\Commands;
+namespace AdamStipak\Commands\Handler;
 
 use Nette\DI\Container;
 use Nette\Object;
 use SimpleBus\Command\Handler\CommandHandler;
 
-class HandlerResolver extends Object {
+class DefaultHandlerResolver extends Object implements IResolver {
 
   /**
    * @var Container

@@ -2,14 +2,14 @@
 
 namespace AdamStipak\Commands\DI;
 
-
 use Nette\DI\CompilerExtension;
 
 class CommandsExtension extends CompilerExtension {
 
   public $defaults = array(
-    'commandResolver' => '\SimpleBus\Command\Handler\LazyLoadingCommandHandlerResolver',
-    'commandBus' => '\SimpleBus\Command\Bus\DelegatesToCommandHandlers',
+    'commandResolver' => '\AdamStipak\Commands\Command\DefaultCommandResolver',
+    'handlerResolver' => '\AdamStipak\Commands\Handler\DefaultHandlerResolver',
+    'bus'      => '\AdamStipak\Commands\Bus\DefaultBus',
   );
 
   public function loadConfiguration() {
@@ -17,13 +17,28 @@ class CommandsExtension extends CompilerExtension {
 
     $builder = $this->getContainerBuilder();
 
-    $builder->addDefinition($this->prefix('handlerResolver'))
-      ->setClass('\AdamStipak\Commands\HandlerResolver', array('@container'));
+    $builder
+      ->addDefinition($this->prefix('handlerResolver'))
+      ->setClass(
+        $this->defaults['handlerResolver'],
+        array('@container')
+      );
 
-    $builder->addDefinition($this->prefix('resolver'))
-      ->setClass($this->defaults['commandResolver'], array('@commands.handlerResolver::resolve', $config['handlers']));
+    $builder
+      ->addDefinition($this->prefix('commandResolver'))
+      ->setClass(
+        $this->defaults['commandResolver'],
+        array(
+          '@' . $this->prefix('handlerResolver') . '::resolve',
+          $config['handlers']
+        )
+      );
 
-    $builder->addDefinition('commandBus')
-      ->setClass($this->defaults['commandBus'], array('@commands.resolver'));
+    $builder
+      ->addDefinition($this->prefix('bus'))
+      ->setClass(
+        $this->defaults['bus'],
+        array('@' . $this->prefix('commandResolver'))
+      );
   }
 }
