@@ -14,6 +14,48 @@ $ composer require adamstipak/nette-cqrs-commands
 Usage:
 ---
 
+Example of **Command**:
+
+```php
+<?php
+
+use SimpleBus\Command\Command;
+
+class FooCommand implements Command {
+
+  public function __construct(...) {
+    // your code
+  }
+
+  /**
+   * @return string
+   */
+  public function name() {
+    return 'foo'; // identificator of command
+  }
+}
+```
+
+Example of **CommandHandler**:
+
+```php
+<?php
+
+use SimpleBus\Command\Command;
+use SimpleBus\Command\Handler\CommandHandler;
+
+class FooCommandHandler implements CommandHandler {
+
+  /**
+   * @param FooCommand $command
+   */
+  public function handle(Command $command) {
+    // here is FooCommand
+  }
+}
+```
+Register all things in `config.neon`.
+
 ```yml
 services:
   fooCommandHandler: FooCommandHandler # your service
