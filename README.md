@@ -64,8 +64,15 @@ extensions:
   events: AdamStipak\Commands\DI\CommandsExtension
 	
 commands:
+  # mapping commands to handlers
   handlers:
     foo: @fooCommandHandler
+    
+  # configuration (here is default values so you can avoid this lines)
+  commandResolver: \AdamStipak\Commands\Command\DefaultCommandResolver
+  handlerResolver: \AdamStipak\Commands\Handler\DefaultHandlerResolver
+  bus: \AdamStipak\Commands\Bus\DefaultBus
+  
 ```
 
 Example of **Presenter**:
