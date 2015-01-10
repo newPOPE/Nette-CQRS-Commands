@@ -3,6 +3,8 @@ Simple CQRS Commands for [Nette Framework](http://nette.org)
 
 This extension provide a simle implementation of CQRS commands.
 
+[![Build Status](https://travis-ci.org/newPOPE/Nette-CQRS-Commands.svg?branch=master)](https://travis-ci.org/newPOPE/Nette-CQRS-Commands)
+
 Installation:
 ---
 The best way to install Nette-CQRS-Commands is using  [Composer](http://getcomposer.org/):
