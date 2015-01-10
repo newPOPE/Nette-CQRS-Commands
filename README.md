@@ -67,3 +67,24 @@ commands:
   handlers:
     foo: @fooCommandHandler
 ```
+
+Example of **Presenter**:
+
+```php
+class FooPresenter extends Nette\Application\UI\Presenter {
+
+  /**
+   * @var AdamStipak\Commands\Bus\DefaultBus
+   * @inject
+   */
+  public $commands;
+  
+  public function actionBar() {
+  
+    // ... your code here ...
+    
+    $this->commands->handle(new FooCommand(...)); // send the command to command bus (model)
+  }
+
+}
+```
