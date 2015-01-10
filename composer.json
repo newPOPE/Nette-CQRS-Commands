@@ -1,5 +1,5 @@
 {
-  "name": "adam-stipak/nette-cqrs-commands",
+  "name": "adamstipak/nette-cqrs-commands",
   "type": "library",
   "description": "Simple CQRS Commands for Nette Framework",
   "keywords": ["nette", "cqrs", "commands"],
