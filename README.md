@@ -50,7 +50,7 @@ class FooCommandHandler implements CommandHandler {
    * @param FooCommand $command
    */
   public function handle(Command $command) {
-    // here is FooCommand
+    // $command is instance of FooCommand
   }
 }
 ```
@@ -61,7 +61,7 @@ services:
   fooCommandHandler: FooCommandHandler # your service
 
 extensions:
-	events: AdamStipak\Commands\DI\CommandsExtension
+  events: AdamStipak\Commands\DI\CommandsExtension
 	
 commands:
   handlers:
