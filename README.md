@@ -1,6 +1,8 @@
 Simple CQRS Commands for [Nette Framework](http://nette.org)
 ===
 
+###<cite>&ldquor;Connect Commands with services in Nette.&rdquor;</cite>
+
 This extension provide a simle implementation of CQRS commands.
 
 [![Build Status](https://travis-ci.org/newPOPE/Nette-CQRS-Commands.svg?branch=master)](https://travis-ci.org/newPOPE/Nette-CQRS-Commands)
@@ -19,8 +21,6 @@ Usage:
 Example of **Command**:
 
 ```php
-<?php
-
 use SimpleBus\Command\Command;
 
 class FooCommand implements Command {
@@ -41,8 +41,6 @@ class FooCommand implements Command {
 Example of **CommandHandler**:
 
 ```php
-<?php
-
 use SimpleBus\Command\Command;
 use SimpleBus\Command\Handler\CommandHandler;
 
